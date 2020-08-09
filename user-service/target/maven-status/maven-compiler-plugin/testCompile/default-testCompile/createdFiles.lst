@@ -1,1 +1,3 @@
-com\online\users\UserServiceApplicationTests.class
+com\online\service\UserServiceTest.class
+com\online\users\TestConfig.class
+com\online\util\UserUtility.class
