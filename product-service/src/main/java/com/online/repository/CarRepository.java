@@ -6,4 +6,6 @@ import com.online.model.Car;
 
 public interface CarRepository extends MongoRepository<Car, String>{
 
+	public Car findByCarId(String carId);
+	
 }

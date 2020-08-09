@@ -5,6 +5,9 @@ import java.io.Serializable;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
 @Document(collection = "cars")
 public class Car implements Serializable{
 	
@@ -21,7 +24,12 @@ public class Car implements Serializable{
 	
 	private String salesPrice;
 	
-	private User seller;
+	private String sellerUserId;
+	
+	private String auctionState;
+	
+	@JsonIgnore
+	private boolean salesPriceAccepted;
 	
 	/**
 	 * @return the carId
@@ -107,18 +115,47 @@ public class Car implements Serializable{
 		this.salesPrice = salesPrice;
 	}
 
+
 	/**
-	 * @return the seller
+	 * @return the auctionState
 	 */
-	public User getSeller() {
-		return seller;
+	public String getAuctionState() {
+		return auctionState;
 	}
 
 	/**
-	 * @param seller the seller to set
+	 * @param auctionState the auctionState to set
 	 */
-	public void setSeller(User seller) {
-		this.seller = seller;
+	public void setAuctionState(String auctionState) {
+		this.auctionState = auctionState;
+	}
+
+	/**
+	 * @return the sellerUserId
+	 */
+	public String getSellerUserId() {
+		return sellerUserId;
+	}
+
+	/**
+	 * @param sellerUserId the sellerUserId to set
+	 */
+	public void setSellerUserId(String sellerUserId) {
+		this.sellerUserId = sellerUserId;
+	}
+
+	/**
+	 * @return the salesPriceAccepted
+	 */
+	public boolean isSalesPriceAccepted() {
+		return salesPriceAccepted;
+	}
+
+	/**
+	 * @param salesPriceAccepted the salesPriceAccepted to set
+	 */
+	public void setSalesPriceAccepted(boolean salesPriceAccepted) {
+		this.salesPriceAccepted = salesPriceAccepted;
 	}
 	
 	

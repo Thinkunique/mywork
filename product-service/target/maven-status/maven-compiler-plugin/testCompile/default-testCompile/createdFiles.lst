@@ -1,1 +1,3 @@
-com\online\products\ProductServiceApplicationTests.class
+com\online\products\TestConfig.class
+com\online\service\ProductServiceTest.class
+com\online\util\CarUtility.class
