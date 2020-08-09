@@ -1,0 +1,4 @@
+com\bidding\service\BiddingServiceTest.class
+com\bidding\system\TestConfig.class
+com\bidding\util\AuctionUtility.class
+com\bidding\service\AuctionServiceTest.class
