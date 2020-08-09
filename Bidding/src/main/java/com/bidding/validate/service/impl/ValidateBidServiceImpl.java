@@ -1,15 +1,10 @@
 package com.bidding.validate.service.impl;
 
-import java.util.LinkedList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
-
 import com.bidding.model.AuctionDetails;
 import com.bidding.model.BiddingDetails;
-import com.bidding.repository.AuctionRepository;
 import com.bidding.repository.RedisRepository;
 import com.bidding.validate.service.ValidateBidService;
 
@@ -30,7 +25,7 @@ public class ValidateBidServiceImpl implements ValidateBidService {
 
 	@Override
 	public boolean validateAuctionState(AuctionDetails auctionDetails) {
-		if (auctionDetails.getState().equals("started")) {
+		if (auctionDetails.getState().equals("start")||auctionDetails.getState().equals("restart")) {
 			return true;
 		}
 		return false;

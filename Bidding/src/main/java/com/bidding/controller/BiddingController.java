@@ -2,7 +2,6 @@ package com.bidding.controller;
 
 import java.util.List;
 
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +48,7 @@ public class BiddingController {
 	}
 
 	@GetMapping("/admin/car/bids")
-	@ApiOperation(value = "Buyer can retrieve bid history of Car", response = List.class)
+	@ApiOperation(value = "Admin can retrieve entire bid history of Car", response = List.class)
 	public ResponseEntity<List<BiddingDetails>> getAllBids(@RequestParam("carId") String carId) {
 		List<BiddingDetails> response = biddingService.getBiddingDetailsForAdmin(carId);
 		return new ResponseEntity<List<BiddingDetails>>(response, HttpStatus.OK);

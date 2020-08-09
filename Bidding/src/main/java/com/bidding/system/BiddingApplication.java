@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @SpringBootApplication
 @EnableMongoRepositories("com.bidding.repository")
-@ComponentScan(basePackages= {"com.bidding.configuration","com.bidding.controller","com.bidding.service.impl","com.bidding.model","com.bidding.aspect","com.bidding.exception","com.bidding.repository","com.bidding.repository.impl","com.bidding.validate.service","com.bidding.validate.service.impl"})
+@ComponentScan(basePackages= {"com.bidding.configuration","com.bidding.controller","com.bidding.service.impl","com.bidding.model","com.bidding.aspect","com.bidding.exception","com.bidding.repository","com.bidding.repository.impl","com.bidding.validate.service","com.bidding.validate.service.impl","com.bidding.consumer.event.service.impl","com.bidding.producer.event.service.impl"})
 public class BiddingApplication {
 
 	public static void main(String[] args) {

@@ -5,7 +5,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import com.bidding.repository.RedisRepository;
-import com.online.model.Car;
 
 @Service
 public class RedisRepositoryImpl implements RedisRepository {
@@ -22,6 +21,11 @@ public class RedisRepositoryImpl implements RedisRepository {
 	public String getMaxPrice(String carId) {
 		String price = (String) redisTemplate.opsForHash().get("Cars", carId);
 		return price;
+	}
+
+	@Override
+	public void deleteCarId(String carId) {
+		redisTemplate.delete(carId);
 	}
 
 }
